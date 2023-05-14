@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '5esgtomarm#@0!uik@%d_44^!cd42faruk437w)ef+@g@3m+ek-4l@g_l6o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -77,10 +78,12 @@ WSGI_APPLICATION = 'WeatherBug.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Weather',
+        'URL' : 'postgresql://postgres:Q1iwJR7b8cYf2k4I7PLC@containers-us-west-68.railway.app:5799/railway',
+        'NAME': 'railway',
         'USER' : 'postgres',
-        'PASSWORD' : 'Vansh@123',
-        'HOST' : 'LOCALHOST',
+        'PASSWORD' : 'Q1iwJR7b8cYf2k4I7PLC',
+        'HOST' : 'containers-us-west-68.railway.app',
+        'PORT' : '5799',
     }
 }
 
